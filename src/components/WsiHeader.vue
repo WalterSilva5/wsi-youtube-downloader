@@ -8,24 +8,24 @@
 </template>
 
 
-<script lang="ts">
-// @ts-nocheck
+<script>
   class Video{
-    url: String; 
-    constructor(new_url: String){
+    url; 
+    constructor(new_url){
       this.url = new_url;
     }
   }
 export default {
 
   methods:{
-    catchV(): any{
-      let url_values: String[] = this.url.split("youtube");
+    catchV(){
+      let url_values = this.url.split("youtube");
       //https://img.youtube.com/vi/videID/mqdefault.jpg
       //http://gdata.youtube.com/feeds/api/videos/bvC_0foemLY
       let new_url = url_values.join("ssyoutube");
       let video =  new Video(new_url)
-      //this.videos.push(video)
+      this.videos.push(video)
+      console.log(this.videos)
       window.open(new_url);
     }
   },
