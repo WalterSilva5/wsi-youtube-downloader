@@ -12,11 +12,12 @@
 import { defineComponent } from "vue";
 
 import "./../node_modules/bootstrap/scss/bootstrap.scss";
+import "./../node_modules/@materializecss/materialize/sass/materialize.scss";
+import "./assets/styles.scss";
+
 
 import WsiHeader from "./components/WsiHeader.vue";
 import WsiBaixados from "./components/WsiBaixados.vue"
-import "./assets/styles.scss";
-
 export default defineComponent({
   name: "App",
   components: {

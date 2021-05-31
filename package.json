@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@materializecss/materialize": "^1.1.0-alpha",
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.21.2",
     "vue": "^3.0.5",
