@@ -9,10 +9,11 @@
 
 
 <script lang="ts">
+// @ts-nocheck
   class Video{
     url: String; 
-    constructor(url: String){
-      this.url = url;
+    constructor(new_url: String){
+      this.url = new_url;
     }
   }
 export default {
@@ -24,7 +25,7 @@ export default {
       //http://gdata.youtube.com/feeds/api/videos/bvC_0foemLY
       let new_url = url_values.join("ssyoutube");
       let video =  new Video(new_url)
-      this.videos.push(video)
+      //this.videos.push(video)
       window.open(new_url);
     }
   },
