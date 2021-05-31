@@ -16,11 +16,18 @@ import "./../node_modules/bootstrap/scss/bootstrap.scss";
 import WsiHeader from "./components/WsiHeader.vue";
 import WsiBaixados from "./components/WsiBaixados.vue"
 import "./assets/styles.scss";
+
 export default defineComponent({
   name: "App",
   components: {
     WsiHeader,
     WsiBaixados
+  },
+  methods: {
+    add(){
+      alert("funciona")
+      //console.log(videos)
+    }
   },
 });
 </script>
@@ -32,7 +39,6 @@ export default defineComponent({
   font-weight: bold;
   display:flex;
   justify-content: center;
-  border: 1px solid gray;
   border-radius: 5px;
   min-height: 600px;
   .downloader{
