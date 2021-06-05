@@ -1,38 +1,32 @@
 <template>
-  <div id="wsi-header" class="container-fluid">
+  <div id="wsi-header" class="container">
     <div id="entradas">
         <input type="text" id="link" class="form-control input-field" placeholder="YOUTUBE VIDEO URL" v-model="url">
     </div>
-    <button class="btn wsi-btn-primary" @click="catchV">BAIXAR</button>
+  <div class="container pr-4">
+        <button class="btn wsi-btn-primary" @click="catch_video">BAIXAR</button>
+  </div>
   </div>
 </template>
 
 
 <script>
-  class Video{
-    url; 
-    constructor(new_url){
-      this.url = new_url;
-    }
-  }
 export default {
 
   methods:{
-    catchV(){
+    catch_video(){
       let url_values = this.url.split("youtube");
       //https://img.youtube.com/vi/videID/mqdefault.jpg
-      //http://gdata.youtube.com/feeds/api/videos/bvC_0foemLY
       let new_url = url_values.join("ssyoutube");
-      let video =  new Video(new_url)
-      this.videos.push(video)
-      console.log(this.videos)
       window.open(new_url);
+
+    this.$store.dispatch("addVideo", this.url)
+    this.url=""
     }
   },
   data() {
     return {
       url: "",
-      videos: new Array()
     }
   },
 }
